@@ -10,5 +10,4 @@ If you would like to contribute to this repository, please create a pull request
 
 ## Stay safe 🛡️
 
-
-# test
+<<<<<<< HEAD
