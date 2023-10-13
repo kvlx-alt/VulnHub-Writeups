@@ -1,0 +1,4 @@
+# Nmap 7.94 scan initiated Thu Oct 12 10:48:31 2023 as: nmap -p- --open --min-rate 5000 -n -Pn -sS -oG ports 192.168.0.104
+Host: 192.168.0.104 ()	Status: Up
+Host: 192.168.0.104 ()	Ports: 22/open/tcp//ssh///, 80/open/tcp//http///, 8585/open/tcp/////	Ignored State: closed (65532)
+# Nmap done at Thu Oct 12 10:48:32 2023 -- 1 IP address (1 host up) scanned in 0.69 seconds

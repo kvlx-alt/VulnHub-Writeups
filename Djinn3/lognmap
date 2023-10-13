@@ -1,0 +1,93 @@
+# Nmap 7.94 scan initiated Sun Oct  8 23:29:46 2023 as: nmap -p22,80,5000,31337 -sCV -oN lognmap 192.168.0.106
+Nmap scan report for 192.168.0.106
+Host is up (0.00044s latency).
+
+PORT      STATE SERVICE VERSION
+22/tcp    open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 e6:44:23:ac:b2:d9:82:e7:90:58:15:5e:40:23:ed:65 (RSA)
+|   256 ae:04:85:6e:cb:10:4f:55:4a:ad:96:9e:f2:ce:18:4f (ECDSA)
+|_  256 f7:08:56:19:97:b5:03:10:18:66:7e:7d:2e:0a:47:42 (ED25519)
+80/tcp    open  http    lighttpd 1.4.45
+|_http-title: Custom-ers
+|_http-server-header: lighttpd/1.4.45
+5000/tcp  open  http    Werkzeug httpd 1.0.1 (Python 3.6.9)
+|_http-server-header: Werkzeug/1.0.1 Python/3.6.9
+|_http-title: Site doesn't have a title (text/html; charset=utf-8).
+31337/tcp open  Elite?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, NULL: 
+|     username>
+|   GenericLines, GetRequest, HTTPOptions, RTSPRequest, SIPOptions: 
+|     username> password> authentication failed
+|   Help: 
+|     username> password>
+|   RPCCheck: 
+|     username> Traceback (most recent call last):
+|     File "/opt/.tick-serv/tickets.py", line 105, in <module>
+|     main()
+|     File "/opt/.tick-serv/tickets.py", line 93, in main
+|     username = input("username> ")
+|     File "/usr/lib/python3.6/codecs.py", line 321, in decode
+|     (result, consumed) = self._buffer_decode(data, self.errors, final)
+|     UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 0: invalid start byte
+|   SSLSessionReq: 
+|     username> Traceback (most recent call last):
+|     File "/opt/.tick-serv/tickets.py", line 105, in <module>
+|     main()
+|     File "/opt/.tick-serv/tickets.py", line 93, in main
+|     username = input("username> ")
+|     File "/usr/lib/python3.6/codecs.py", line 321, in decode
+|     (result, consumed) = self._buffer_decode(data, self.errors, final)
+|     UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 13: invalid continuation byte
+|   TerminalServerCookie: 
+|     username> Traceback (most recent call last):
+|     File "/opt/.tick-serv/tickets.py", line 105, in <module>
+|     main()
+|     File "/opt/.tick-serv/tickets.py", line 93, in main
+|     username = input("username> ")
+|     File "/usr/lib/python3.6/codecs.py", line 321, in decode
+|     (result, consumed) = self._buffer_decode(data, self.errors, final)
+|_    UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 5: invalid continuation byte
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port31337-TCP:V=7.94%I=7%D=10/8%Time=652381CD%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,A,"username>\x20")%r(GetRequest,2A,"username>\x20password>\x20authe
+SF:ntication\x20failed\n")%r(SIPOptions,2A,"username>\x20password>\x20auth
+SF:entication\x20failed\n")%r(GenericLines,2A,"username>\x20password>\x20a
+SF:uthentication\x20failed\n")%r(HTTPOptions,2A,"username>\x20password>\x2
+SF:0authentication\x20failed\n")%r(RTSPRequest,2A,"username>\x20password>\
+SF:x20authentication\x20failed\n")%r(RPCCheck,1A9,"username>\x20Traceback\
+SF:x20\(most\x20recent\x20call\x20last\):\n\x20\x20File\x20\"/opt/\.tick-s
+SF:erv/tickets\.py\",\x20line\x20105,\x20in\x20<module>\n\x20\x20\x20\x20m
+SF:ain\(\)\n\x20\x20File\x20\"/opt/\.tick-serv/tickets\.py\",\x20line\x209
+SF:3,\x20in\x20main\n\x20\x20\x20\x20username\x20=\x20input\(\"username>\x
+SF:20\"\)\n\x20\x20File\x20\"/usr/lib/python3\.6/codecs\.py\",\x20line\x20
+SF:321,\x20in\x20decode\n\x20\x20\x20\x20\(result,\x20consumed\)\x20=\x20s
+SF:elf\._buffer_decode\(data,\x20self\.errors,\x20final\)\nUnicodeDecodeEr
+SF:ror:\x20'utf-8'\x20codec\x20can't\x20decode\x20byte\x200x80\x20in\x20po
+SF:sition\x200:\x20invalid\x20start\x20byte\n")%r(DNSVersionBindReqTCP,A,"
+SF:username>\x20")%r(DNSStatusRequestTCP,A,"username>\x20")%r(Help,14,"use
+SF:rname>\x20password>\x20")%r(SSLSessionReq,1B1,"username>\x20Traceback\x
+SF:20\(most\x20recent\x20call\x20last\):\n\x20\x20File\x20\"/opt/\.tick-se
+SF:rv/tickets\.py\",\x20line\x20105,\x20in\x20<module>\n\x20\x20\x20\x20ma
+SF:in\(\)\n\x20\x20File\x20\"/opt/\.tick-serv/tickets\.py\",\x20line\x2093
+SF:,\x20in\x20main\n\x20\x20\x20\x20username\x20=\x20input\(\"username>\x2
+SF:0\"\)\n\x20\x20File\x20\"/usr/lib/python3\.6/codecs\.py\",\x20line\x203
+SF:21,\x20in\x20decode\n\x20\x20\x20\x20\(result,\x20consumed\)\x20=\x20se
+SF:lf\._buffer_decode\(data,\x20self\.errors,\x20final\)\nUnicodeDecodeErr
+SF:or:\x20'utf-8'\x20codec\x20can't\x20decode\x20byte\x200xd7\x20in\x20pos
+SF:ition\x2013:\x20invalid\x20continuation\x20byte\n")%r(TerminalServerCoo
+SF:kie,1B0,"username>\x20Traceback\x20\(most\x20recent\x20call\x20last\):\
+SF:n\x20\x20File\x20\"/opt/\.tick-serv/tickets\.py\",\x20line\x20105,\x20i
+SF:n\x20<module>\n\x20\x20\x20\x20main\(\)\n\x20\x20File\x20\"/opt/\.tick-
+SF:serv/tickets\.py\",\x20line\x2093,\x20in\x20main\n\x20\x20\x20\x20usern
+SF:ame\x20=\x20input\(\"username>\x20\"\)\n\x20\x20File\x20\"/usr/lib/pyth
+SF:on3\.6/codecs\.py\",\x20line\x20321,\x20in\x20decode\n\x20\x20\x20\x20\
+SF:(result,\x20consumed\)\x20=\x20self\._buffer_decode\(data,\x20self\.err
+SF:ors,\x20final\)\nUnicodeDecodeError:\x20'utf-8'\x20codec\x20can't\x20de
+SF:code\x20byte\x200xe0\x20in\x20position\x205:\x20invalid\x20continuation
+SF:\x20byte\n");
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Oct  8 23:31:00 2023 -- 1 IP address (1 host up) scanned in 74.14 seconds
