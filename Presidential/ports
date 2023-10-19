@@ -1,0 +1,4 @@
+# Nmap 7.94 scan initiated Mon Oct 16 12:14:50 2023 as: nmap -p- --open --min-rate 5000 -n -Pn -sS -oG ports 192.168.0.110
+Host: 192.168.0.110 ()	Status: Up
+Host: 192.168.0.110 ()	Ports: 80/open/tcp//http///, 2082/open/tcp//infowave///	Ignored State: closed (65533)
+# Nmap done at Mon Oct 16 12:14:51 2023 -- 1 IP address (1 host up) scanned in 0.67 seconds

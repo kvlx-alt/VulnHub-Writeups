@@ -1,0 +1,19 @@
+# Nmap 7.94 scan initiated Wed Oct 18 22:59:59 2023 as: nmap -p53,80,9999 -sCV -oN lognmap 192.168.0.112
+Nmap scan report for ubuntu.local (192.168.0.112)
+Host is up (0.00022s latency).
+
+PORT     STATE SERVICE VERSION
+53/tcp   open  domain  ISC BIND 9.16.1 (Ubuntu Linux)
+| dns-nsid: 
+|_  bind.version: 9.16.1-Ubuntu
+80/tcp   open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Notorious Kid : A Hacker 
+9999/tcp open  http    Tornado httpd 6.1
+| http-title: Please Log In
+|_Requested resource was /login?next=%2F
+|_http-server-header: TornadoServer/6.1
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Oct 18 23:00:13 2023 -- 1 IP address (1 host up) scanned in 14.60 seconds

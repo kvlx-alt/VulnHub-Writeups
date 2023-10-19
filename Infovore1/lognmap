@@ -1,0 +1,11 @@
+# Nmap 7.94 scan initiated Fri Oct 13 15:15:03 2023 as: nmap -p80 -sCV -oN lognmap 192.168.0.107
+Nmap scan report for 192.168.0.107
+Host is up (0.00034s latency).
+
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.38 ((Debian))
+|_http-server-header: Apache/2.4.38 (Debian)
+|_http-title: Include me ...
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Oct 13 15:15:22 2023 -- 1 IP address (1 host up) scanned in 19.64 seconds
